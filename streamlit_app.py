@@ -43,7 +43,7 @@ elif option == "Tłumaczenie z angielskiego na niemiecki":
     text = st.text_area(label="Wpisz tekst")
     if text:
         with st.spinner(text='Pracuję...'):
-            translator = pipeline("translation", model="MattBoraske/BART-En-2-De-Translation")
+            translator = pipeline("translation", model="Helsinki-NLP/opus-mt-en-de")
             translation = translator(text)[0]['translation_text']
             st.success('Done')
         st.write(f'The result:\n{translation}')
